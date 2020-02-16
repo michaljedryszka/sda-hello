@@ -11,9 +11,15 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.print("Hello World");
-        out.print("<a href=\"hello.html\">hello.html</a>");
-        response.setHeader("Content-type", "text/html");
+        String pierwszePole = request.getParameter("pierwsze");
+        String drugiePole = request.getParameter("drugie");
+        int trzeciePole = Integer.valueOf(pierwszePole) + Integer.valueOf(drugiePole);
+
+        request.setAttribute("pierwszePole", pierwszePole);
+        request.setAttribute("drugiePole", drugiePole);
+        request.setAttribute("trzeciePole", trzeciePole);
+
+        request.getRequestDispatcher("WEB-INF/jsp/hello.jsp")
+                .forward(request, response);
     }
 }

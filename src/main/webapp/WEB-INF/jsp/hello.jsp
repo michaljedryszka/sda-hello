@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<p>Hello index ze zmiana sssss</p>
 <form action="sayhello" method="get">
     Pierwsze: <input type="text" name="pierwsze"/><br/>
     Drugie: <input type="text" name="drugie"/><br/>
