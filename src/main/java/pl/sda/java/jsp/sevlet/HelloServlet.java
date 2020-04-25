@@ -14,4 +14,10 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.print("Hello World");
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        out.print("Hello World z POST");
+    }
 }
