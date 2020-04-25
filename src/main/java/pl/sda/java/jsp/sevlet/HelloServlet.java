@@ -12,12 +12,12 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        out.print("Hello World");
+        out.print("Hello World " + request.getParameter("parameterGet"));
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
-        out.print("Hello World z POST");
+        out.print("Hello World z POST " +  req.getParameter("parameterPost"));
     }
 }
